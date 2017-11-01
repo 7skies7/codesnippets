@@ -1,0 +1,8 @@
+==================================================
+1) Laravel Installation 
+==================================================
+
+	composer global require "laravel/installer"
+
+	Update Path in environment variables to access laravel globally
+	
