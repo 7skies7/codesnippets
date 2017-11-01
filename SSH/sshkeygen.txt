@@ -7,7 +7,7 @@
 	Adds a private/public rsa key pair.
 
 ==================================================
-1) Add ssh keygen (private)
+2) Add ssh keygen (private)
 ==================================================
 
 	$ ssh-keygen -t rsa -b 4096 -C "ext.pmudliyar@cma-cgm.com"

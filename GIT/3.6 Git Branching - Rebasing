@@ -1,0 +1,19 @@
+==================================================
+1) Rebaising
+==================================================
+	
+	With the rebase command, you can take all the changes that were committed on one branch and replay them on another one.
+	
+==================================================
+2) Simple Rebaising
+==================================================
+	
+	$ git remote add <shortname> <url>
+
+	git remote add origin https://github.com/7skies7/gitcommands.git
+
+	Adds a repostitor to the remote server with shortname as origin. 
+
+
+
+

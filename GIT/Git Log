@@ -1,0 +1,39 @@
+==================================================
+1) Git Logging
+==================================================
+	
+	$ git log --oneline --decorate
+
+	 0e25143 (HEAD, master) Merge branch 'feature'
+	 ad8621a (feature) Fix a bug in the feature
+	 16b36c6 Add a new feature
+	 23ad9ad (tag: v0.9) Add the initial code base
+	 
+	 Many times it’s useful to know which branch or tag each commit is associated with. The --decorate flag makes git log display all of the references (e.g., branches, tags, etc) that point to each commit.
+
+
+	 $ git log --oneline
+
+	 0e25143 Merge branch 'feature'
+	 ad8621a Fix a bug in the feature
+	 16b36c6 Add a new feature
+	 23ad9ad Add the initial code base
+	 
+	 The --oneline flag condenses each commit to a single line. By default, it displays only the commit ID and the first line of the commit message. 
+
+
+	 $ git log --stat
+
+	 Provides stats about how much insertions and deletions was done
+
+	 $ git log --p
+
+	 Provides what was changed in all commit.
+
+	 $ git shortlog
+
+	 $ git log --graph --oneline --decorate
+
+	 $ git log --pretty=format:"%cn committed %h on %cd"
+
+	 $ git log -3
