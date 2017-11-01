@@ -1,0 +1,25 @@
+==================================================
+1) List all branch
+==================================================
+	
+	$ git branch
+
+	Lists all branches, the branch with star symbol indicates master branch
+
+
+==================================================
+2) Create a branch
+==================================================
+	
+	$ git branch <branchName>
+
+	$ git checkout -b <branchName>
+
+	Create a new branch.
+
+
+==================================================
+3) List all branch with commits
+==================================================
+	
+	$ git branch -V

@@ -1,0 +1,25 @@
+==================================================
+1) Merge hotfix to master
+==================================================
+	
+	$ git checkout master
+	$ git merge hotfix
+
+	This merges the hotfix branch into master branch moves the HEAD pointer ahead.(Fast Forward)
+
+==================================================
+2) Merge issuebranch to (new hotfix) master
+==================================================
+	
+	$ git checkout master
+	$ git merge issuebranch
+
+	Recursive strategy is used to merge two branches in this case new merge commit branch is created based on the commits in two or different branches.
+
+==================================================
+3) Delete Branch
+==================================================
+	
+	$ git branch -d <branchname>
+
+	This merges the hotfix branch into master branch moves the HEAD pointer ahead.(Fast Forward)

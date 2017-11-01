@@ -1,0 +1,78 @@
+==================================================
+1) Showing you remotes
+==================================================
+
+	$ git remote 
+	origin
+
+	Provides list of all remotes. Origin is the default name for the remote repository server cloned from by git.
+
+
+==================================================
+2) Unstaging a staged file
+==================================================
+	
+	$ git remote -v
+	origin https://github.com/schacon/ticgit
+
+	Provide list of urls for which GIt has showed the shortname.
+
+
+==================================================
+3) Adding Remote Repositories
+==================================================
+	
+	$ git remote add <shortname> <url>
+
+	git remote add origin https://github.com/7skies7/gitcommands.git
+
+	Adds a repostitor to the remote server with shortname as origin. 
+
+
+==================================================
+4) Fetching From Your Remotes
+==================================================
+
+
+	$ git fetch <remote>
+
+	Used for fetching code that is not in local directory from the remote repository. Git Fetch only pulls the code, it doesnt merge the code.
+
+==================================================
+4) Pulling From Your Remotes
+==================================================
+
+	$ git pull 
+
+	Used to pull code from remote branch the only difference than fetch pull directly merges the code in the local directory.
+
+
+==================================================
+4) Pushing to Your Remotes
+==================================================
+
+	$ git push origin master
+
+	Used to push code to the remote server if you have the write permissions.
+
+
+==================================================
+4) Inspecting a Remote
+==================================================
+ 
+ 	$ git remote show <remote>
+
+ 	To check details of the all remote pulls and push.
+
+
+==================================================
+4) Renaming and Removing Remotes
+==================================================
+	
+	$ git remote rename origin origin1
+	$ git remote
+	origin1
+	
+	$ git remote remove paul
+
+

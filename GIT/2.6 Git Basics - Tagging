@@ -1,0 +1,74 @@
+==================================================
+1) Tagging
+==================================================
+	
+	Like most VCSs, Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on).
+
+==================================================
+2) Listing Your Tags
+==================================================
+	
+	$ git tag
+	v0.1
+	v1.3
+
+	$git tag -1 "v1.8.5"
+
+	Listing the available tags.
+
+
+==================================================
+3) Creating Tags (Annotated Tags)
+==================================================
+	
+	$ git tag -a v1.4 -m "my version 1.4"
+
+	Annotated tags is created using the above command and you also add a messsage
+
+
+==================================================
+4) Creating Tags (Lightweight Tags)
+==================================================
+
+
+	$ git tag v1.4-1w
+
+	Creating tags without message
+
+==================================================
+4) Tagging later
+==================================================
+
+	$ git tag -a v1.2 <commit_hash>
+
+
+	Tag commits to specific tag( version number ).
+
+
+==================================================
+4) Sharing Tags
+==================================================
+
+	$ git push origin v1.5
+
+	By default git doesnt push tags, to push tags to remote use the above command.
+
+
+==================================================
+4) Inspecting a Remote
+==================================================
+ 
+ 	$ git remote show <remote>
+
+ 	To check details of the all remote pulls and push.
+
+
+==================================================
+4) Checkout out Tags
+==================================================
+	
+	$ git checkout 2.0.0
+
+	
+	$ git checkout -b version2 v2.0.0
+

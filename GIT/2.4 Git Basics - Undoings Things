@@ -1,0 +1,31 @@
+==================================================
+1) Undoing Things
+==================================================
+
+	git commit --amend
+
+	Forget to add file to previous commit. (Note: Old Commit gets replaced with new commit.)
+
+	git commit -m "initial commit"
+
+	git add forgotten_file
+
+	git commit --amend
+
+
+==================================================
+2) Unstaging a staged file
+==================================================
+	
+	git reset HEAD <File>
+
+	Remove file from staging area i.e file that have been added (Green color)
+
+
+==================================================
+3) Unmodifying a Modified File
+==================================================
+	
+	git checkout -- <file>
+
+	Removing the changes to the file i.e file that needs to be added (Red color)

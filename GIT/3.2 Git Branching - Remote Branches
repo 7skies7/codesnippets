@@ -1,0 +1,32 @@
+==================================================
+1) List all remotes
+==================================================
+	
+	$ git remote show
+	$ git ls-remote
+
+	Lists all the remotes.
+
+==================================================
+2) Git Fetch
+==================================================
+	
+	$ git fetch origin
+
+	Pulls code from remote but doesnt merge.
+
+==================================================
+3) Git Push
+==================================================
+	
+	$ git push origin <branchname>
+
+	Push all your local to remote branch.
+
+==================================================
+3) Tracking Branches
+==================================================
+	
+	$ git checkout --track origin/serverfix
+
+	Push all your local to remote branch.
