@@ -8,11 +8,14 @@
 2) Simple Rebaising
 ==================================================
 	
-	$ git remote add <shortname> <url>
+	$ git checkout master
 
-	git remote add origin https://github.com/7skies7/gitcommands.git
+	$ git rebase FEATURE_BRANCH
 
-	Adds a repostitor to the remote server with shortname as origin. 
+	$ git rebase --onto master server client
+
+	Take the client branch, figure out the patches since it diverged from the server branch, and replay these patches in the client branch as if it was based directly off the master branch instead.	
+
 
 
 

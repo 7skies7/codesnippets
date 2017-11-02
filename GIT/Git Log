@@ -37,3 +37,5 @@
 	 $ git log --pretty=format:"%cn committed %h on %cd"
 
 	 $ git log -3
+
+	 https://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
