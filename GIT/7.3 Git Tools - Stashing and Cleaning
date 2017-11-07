@@ -1,0 +1,75 @@
+==================================================
+1) Stashing
+==================================================
+	
+	Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.
+	
+==================================================
+2) Stashing your work
+==================================================
+	
+	$ git stash / git stash save (Will stash only modified & staged tracked files)
+
+	$ git stash -u (Will also stash the untracked files)
+
+	$ git stash --patch (Will give a prompt to choose which files need to be stashed)
+
+	To push a new stash onto your stack, run git stash or git stash save
+
+==================================================
+2) List your stash
+==================================================
+	
+	$ git stash list
+	stash@{0}: WIP on master: 049d078 added the index file
+	stash@{1}: WIP on master: c264051 Revert "added file_size"
+	stash@{2}: WIP on master: 21d80a5 added number to log
+
+
+==================================================
+2) Apply your stash
+==================================================
+	
+	$ git stash apply
+
+	This will apply the most recent stash.
+
+	$ git stash apply stash@{2}
+
+	This will apply the stash@{2} stack/commit.
+
+	$ git stash apply --index
+
+	This will apply the stack with the staged commits.(i.e files which were added to the staging area)
+
+
+==================================================
+2) POP your stash
+==================================================
+	
+	$ git stash pop
+
+	This will apply your stack and immediately drop the stack.
+
+==================================================
+2) Drop your stash
+==================================================
+	
+	$ git stash drop <stashName>
+
+	This will drop the stack.
+
+
+==================================================
+2) Cleaning your Working Directory
+==================================================
+	
+	$ git clean -d -n
+
+	$ git clean -f -d
+
+	stash@{0}: WIP on master: 049d078 added the index file
+	stash@{1}: WIP on master: c264051 Revert "added file_size"
+	stash@{2}: WIP on master: 21d80a5 added number to log
+
+
