@@ -1,0 +1,106 @@
+==================================================
+Laravel Package Development 
+==================================================
+
+Step 1 : Create packages folder in the project root directory.
+		
+		 All created packages will reside in the packages directory.
+
+Step 2: Then inside packages folder will create packages. Please note the sequence in which the packages folder 		are created.
+
+		<your name/authorName>/<packageName>
+
+		ex. prabhakar/codesnippets
+
+		First lest create folder with the author name( Prabhakar ) and then inside we will create the folder with the package name (codesnippets).
+
+		Inside the codesnippets folder create the src directory, this folder will contain our package source code.
+
+		Now the folder structure would be similar to below
+
+		SkyLara
+			-app
+			-database
+			-pacakges
+				-skies
+					-codesnippets
+						-src
+
+Step 3: To create a package we will require composer.json file. Every package will have a composer.json file. 
+		Go to the package folder (ie codesnippets) and run this command.
+
+		composer init
+
+		You will need to answer some questions and a composer.json file will be created in your package folder.
+
+		SkyLara
+			-app
+			-database
+			-pacakges
+				-skies
+					-codesnippets
+						-src
+						composer.json
+
+Step 4: Now to let our laravel know about our package that we created open the composer.json (root / project 			folder) file. In composer.json file ,find the autoload key and add our package namespace to psr-4 key.
+		
+	
+
+	    "autoload": {
+	        "classmap": [
+	            "database"
+	        ],
+	        "psr-4": {
+	            "App\\": "app/",
+	            "Skies\\Codesnippets\\": "packages/skies/codesnippets/src"
+	        }
+	    },
+
+Step 5: Now execute the below command, composer dump-autoload will refresh all the files and folders that needs to be loaded and will also include your package .
+
+	composer dump-autoload
+
+Step 6: Above steps completes the package creation process. Now lets define what our package will do and write some basic codes.
+
+		Lets create a service provider for our package. 
+
+		Essentially, Service Provider is a Class which would contain main information about package – what Controllers does it use, what Routes file or Views to load etc. You can look at it as a set of rules for the package.
+
+		php artisan make:provider CodesnippetsServiceProvider
+
+		By default laravel will create the file in app/Providers directory, move this file to our package src directory. (packages/skies/codesnippets/src). Please note to change the namespace in CodesnippetsServiceProvider.php file.
+
+		ex: namespace Skies\Codesnippets
+
+Step 7: Now include the our service provider in config/app.php file
+
+		 Skies\Codesnippets\CodesnippetsServiceProvider::class,
+
+Step 8: Lets create the controller and move the file to pacakge src directory and chnage the namespace and also add this line in our controller
+
+		use App\Http\Controllers\Controller;
+
+Step 9: Create the routes.php file in src file
+
+		Add the specific routes to our package.
+
+
+Additional syntax 
+
+To let laravel know about our controller and routes file we add the following code snippets.
+
+    public function boot()
+    {
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'codesnippets');
+        $this->publishes([
+            __DIR__.'/views' => resource_path('views/codesnipets/'),
+        ]);
+         $this->publishes([ __DIR__.'/path/to/assets' => public_path('vendor/courier'),], 'public');
+    }
+
+    public function register()
+    {
+        $this->app->make('Skies\Codesnippets\CodesnippetsController');
+    }
